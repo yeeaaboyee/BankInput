@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add user</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+
+<h1>Add Bank Details</h1>
+
+<form action="#" th:action="@{/addUser}" th:object="${user}" method="post">
+    <p>
+        Bank: <input type="text" th:field="*{bank}">
+    </p>
+    <p>
+        Card Number: <input type="text" th:field="*{card}">
+    </p>
+    <p>
+        Expiry Date: <input type="text" th:field="*{expiry}">
+    </p>
+    <p>
+        <button>Submit</button>
+    </p>
+</form>
+
+<table border="1">
+    <tr>
+        <td th:text="'Bank'"></td>
+        <td th:text="'Card Number'"></td>
+        <td th:text="'Expiry Date'"></td>
+    </tr>
+    <tr>
+        <td th:text="${user.bank}"></td>
+        <td th:text="${user.card}"></td>
+        <td th:text="${user.expiry}"></td>
+    </tr>
+</table>
+
+</body>
+</html>
